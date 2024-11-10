@@ -1,0 +1,11 @@
+﻿<Skills>
+    <Skill>
+        <Name>技能一</Name>
+        <Description>描述一</Description>
+    </Skill>
+    <Skill>
+        <Name>技能二</Name>
+        <Description>描述二</Description>
+    </Skill>
+    <!-- Các skill khác -->
+</Skills>

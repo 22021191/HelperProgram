@@ -1,0 +1,2 @@
+﻿Biểu thức chính quy để tìm các cụm từ có ký tự Trung Quốc liên tiếp
+Kết quả là biểu thức sẽ khớp với các cụm từ chứa ký tự Trung Quốc liên tiếp, ví dụ: 中国, 你好, hoặc 攻击 和 防御.
