@@ -6,17 +6,17 @@ using OfficeOpenXml.Style;
 
 class Program
 {
+    // Đường dẫn tới thư mục gốc chứa các file .txt và các thư mục con
+    static string rootFolderPath = @"D:\WorkPlace\c#\HelperProgram\HelperProgram\TextFiles";
+    // Đường dẫn tới file Excel cần ghi các cụm từ tiếng Trung
+    static string outputFilePath = @"D:\WorkPlace\c#\HelperProgram\HelperProgram\Output.xlsx";
     static void Main()
     {
         ReadFile();
     }
     static void ReadFile()
     {
-        // Đường dẫn tới thư mục gốc chứa các file .txt và các thư mục con
-        string rootFolderPath = @"D:\WorkPlace\c#\HelperProgram\HelperProgram\TextFiles";
-        // Đường dẫn tới file Excel cần ghi các cụm từ tiếng Trung
-        string outputFilePath = @"D:\WorkPlace\c#\HelperProgram\HelperProgram\Output.xlsx";
-
+       
         try
         {
             string folderName = new DirectoryInfo(rootFolderPath).Name;
@@ -27,14 +27,10 @@ class Program
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(folderName);
 
                 int row = 2;
-
-                // Lấy danh sách tất cả các file .txt trong thư mục chính và các thư mục con
                 string[] files = Directory.GetFiles(rootFolderPath, "*.txt", SearchOption.AllDirectories);
                 foreach (string filePath in files)
                 {
                     string fileName = Path.GetFileName(filePath);
-
-                    // Đọc nội dung của file txt
                     string text = File.ReadAllText(filePath);
 
                     // Biểu thức chính quy để tìm các cụm từ có ký tự Trung Quốc
@@ -90,6 +86,76 @@ class Program
     }
     static void WriteFile()
     {
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+        // Dictionary để lưu trữ cặp từ Trung-Việt
+        Dictionary<string, string> translations = new Dictionary<string, string>();
 
+        // Danh sách để lưu tên các file
+        List<string> filenames = new List<string>();
+
+        // Đọc file Excel
+        using (var package = new ExcelPackage(new FileInfo(outputFilePath)))
+        {
+            var worksheet = package.Workbook.Worksheets[0];
+            int rowCount = worksheet.Dimension.Rows;
+
+            // Đọc dữ liệu từ Excel và lưu vào các collection
+            for (int row = 2; row <= rowCount; row++)
+            {
+                string filename = worksheet.Cells[row, 1].Text?.Trim();
+                string chinese = worksheet.Cells[row, 2].Text?.Trim();
+                string vietnamese = worksheet.Cells[row, 3].Text?.Trim();
+
+                if (!string.IsNullOrEmpty(filename))
+                {
+                    filenames.Add(filename);
+                }
+
+                if (!string.IsNullOrEmpty(chinese) && !string.IsNullOrEmpty(vietnamese))
+                {
+                    translations[chinese] = vietnamese;
+                }
+            }
+        }
+
+        // Xử lý từng file
+        foreach (string filename in filenames)
+        {
+            if (File.Exists(filename))
+            {
+                try
+                {
+                    // Đọc nội dung file
+                    string content = File.ReadAllText(filename);
+                    string newContent = content;
+
+                    // Thay thế các từ Trung bằng từ Việt
+                    foreach (var translation in translations)
+                    {
+                        newContent = newContent.Replace(translation.Key, translation.Value);
+                    }
+
+                    // Tạo bản sao lưu của file gốc
+                    string fileSaoLuu = Path.ChangeExtension(filename, ".backup" + Path.GetExtension(filename));
+                    File.Copy(filename, fileSaoLuu, true);
+
+                    // Ghi nội dung đã sửa vào file
+                    File.WriteAllText(filename, newContent);
+
+                    Console.WriteLine($"Success file: {filename}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error file {filename}: {ex.Message}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Not Found: {filename}");
+            }
+        }
+
+        Console.WriteLine("Success");
     }
+
 }

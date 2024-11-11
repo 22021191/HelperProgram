@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6765980C-2AF3-4206-9F97-D1C72981A37D}|HelperProgram\\HelperProgram.csproj|d:\\workplace\\c#\\helperprogram\\helperprogram\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6765980C-2AF3-4206-9F97-D1C72981A37D}|HelperProgram\\HelperProgram.csproj|solutionrelative:helperprogram\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6765980C-2AF3-4206-9F97-D1C72981A37D}|HelperProgram\\HelperProgram.csproj|d:\\workplace\\c#\\helperprogram\\helperprogram\\textfiles\\text\\textfile1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6765980C-2AF3-4206-9F97-D1C72981A37D}|HelperProgram\\HelperProgram.csproj|solutionrelative:helperprogram\\textfiles\\text\\textfile1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TextFile1.txt",
-              "DocumentMoniker": "D:\\WorkPlace\\c#\\HelperProgram\\HelperProgram\\TextFiles\\text\\TextFile1.txt",
-              "RelativeDocumentMoniker": "HelperProgram\\TextFiles\\text\\TextFile1.txt",
-              "ToolTip": "D:\\WorkPlace\\c#\\HelperProgram\\HelperProgram\\TextFiles\\text\\TextFile1.txt",
-              "RelativeToolTip": "HelperProgram\\TextFiles\\text\\TextFile1.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-11-10T18:14:47.951Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -45,7 +28,7 @@
               "RelativeDocumentMoniker": "HelperProgram\\Program.cs",
               "ToolTip": "D:\\WorkPlace\\c#\\HelperProgram\\HelperProgram\\Program.cs",
               "RelativeToolTip": "HelperProgram\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAwwBUAAABHAAAA",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAgwIUAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T18:13:59.159Z",
               "EditorCaption": ""

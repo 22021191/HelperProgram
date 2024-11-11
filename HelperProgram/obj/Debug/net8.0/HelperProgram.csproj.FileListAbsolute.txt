@@ -32,3 +32,4 @@ D:\WorkPlace\c#\HelperProgram\HelperProgram\bin\Debug\net8.0\runtimes\win\lib\ne
 D:\WorkPlace\c#\HelperProgram\HelperProgram\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\WorkPlace\c#\HelperProgram\HelperProgram\obj\Debug\net8.0\HelperProgram.csproj.AssemblyReference.cache
 D:\WorkPlace\c#\HelperProgram\HelperProgram\obj\Debug\net8.0\HelperPr.6481B9CF.Up2Date
+D:\WorkPlace\c#\HelperProgram\HelperProgram\obj\Debug\net8.0\HelperProgram.sourcelink.json
